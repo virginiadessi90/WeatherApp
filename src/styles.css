@@ -1,0 +1,118 @@
+body {
+  background: rgb(164, 164, 255);
+}
+
+h1 {
+  color: orange;
+  font-family: "Krona One";
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 0;
+  margin-top: 16px;
+}
+
+h2,
+h3 {
+  color: orange;
+  font-family: "Krona One";
+  font-size: 16px;
+  margin-top: 0;
+  line-height: 1.5;
+}
+
+ul {
+  font-family: "Krona One";
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.5;
+  color: orange;
+}
+
+hr {
+  color: blue;
+  margin: 20px 0;
+  border: 1px solid blue;
+}
+
+.card-app {
+  background: rgb(255, 241, 215);
+  max-width: 600px;
+  margin: 50px auto;
+  margin-top: 50px;
+}
+
+.searchbar {
+  border: orange solid;
+  background: rgb(255, 228, 178);
+  border-radius: 10px;
+}
+
+.btn {
+  border-radius: 10px;
+  background: orange;
+}
+
+.prewin {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.day,
+.temp {
+  color: orange;
+  font-family: "Krona One";
+  font-size: 10px;
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  right: 20px;
+}
+
+.card-app {
+  margin: 5px;
+  border: 2px solid blue;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.temperature a {
+  color: blue;
+}
+
+.primary {
+  height: 120px;
+}
+
+.secondary {
+  height: 30px;
+  margin-bottom: 6px;
+}
+
+.credit {
+  color: blue;
+  font-family: "Krona One";
+  font-size: 8px;
+  margin-bottom: 8px;
+  margin-left: 16px;
+}
+
+.credit a {
+  color: blue;
+  font-family: "Krona One";
+}
+
+#current-location {
+  border-color: orange;
+}
+
+#current-temp {
+  color: orange;
+  font-family: "Krona One";
+  font-size: 16px;
+  margin-top: 0;
+  line-height: 1.5;
+}
