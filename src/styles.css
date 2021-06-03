@@ -109,6 +109,10 @@ hr {
   border-color: orange;
 }
 
+#current-condition:first-letter {
+  text-transform: capitalize;
+}
+
 #current-temp {
   color: orange;
   font-family: "Krona One";
