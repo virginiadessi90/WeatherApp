@@ -23,9 +23,9 @@ function formatDate(date) {
 
 function showTemp(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
-  document.querySelector("#current-temp").innerHTML = Math.round(
+  document.querySelector("#current-temp").innerHTML = `${Math.round(
     response.data.main.temp
-  );
+  )}°C`;
   document.querySelector(
     "#current-condition"
   ).innerHTML = `${response.data.weather[0].description},`;
