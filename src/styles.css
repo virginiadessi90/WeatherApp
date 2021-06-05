@@ -21,6 +21,10 @@ h3 {
   line-height: 1.5;
 }
 
+h3:first-letter {
+  text-transform: capitalize;
+}
+
 ul {
   font-family: "Krona One";
   padding-left: 0;
@@ -107,10 +111,6 @@ hr {
 
 #current-location {
   border-color: orange;
-}
-
-#current-condition:first-letter {
-  text-transform: capitalize;
 }
 
 #current-temp {
