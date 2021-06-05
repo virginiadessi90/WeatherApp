@@ -59,6 +59,12 @@ function searchLocation(position) {
 
 function currentLocation(event) {
   event.preventDefault();
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = "f1a24663f0cb0588bb9ad4c51ce1de8b";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemp);
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
