@@ -64,6 +64,10 @@ function showTemp(response) {
   newTemp.innerHTML = `${temp} °C`;
   let weatherCond = document.querySelector("#current-condition");
   weatherCond.innerHTML = `${response.data.weather[0].description},`;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 
 function getCurrentPosition(location) {
@@ -72,3 +76,5 @@ function getCurrentPosition(location) {
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentPosition);
+
+searchCity("Rome");
