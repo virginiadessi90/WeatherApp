@@ -57,8 +57,7 @@ function searchLocation(position) {
   axios.get(apiUrl).then(showTemp);
 }
 
-function currentLocation(event) {
-  event.preventDefault();
+function currentLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "f1a24663f0cb0588bb9ad4c51ce1de8b";
