@@ -17,10 +17,8 @@ function formatDate(date) {
   if (currentMinutes < 10) {
     currentMinutes = `0${currentMinutes}`;
   }
-
   return `${currentDay}, ${currentHour}:${currentMinutes}`;
 }
-
 function showTemp(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
   document.querySelector("#current-temp").innerHTML = `${Math.round(
@@ -33,26 +31,24 @@ function showTemp(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-
 function searchCity(city) {
   let apiKey = "f1a24663f0cb0588bb9ad4c51ce1de8b";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemp);
 }
-
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-search").value;
   searchCity(city);
 }
-
 function searchLocation(position) {
   let apiKey = "f1a24663f0cb0588bb9ad4c51ce1de8b";
   let units = "metric";
@@ -61,7 +57,6 @@ function searchLocation(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemp);
 }
-
 function currentLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -69,17 +64,16 @@ function currentLocation(position) {
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemp);
+}
+function getCurrentPosition(event) {
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
-
 let date = document.querySelector("#current-date");
 let currentTime = new Date();
 date.innerHTML = formatDate(currentTime);
-
 let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", handleSubmit);
-
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentPosition);
-
 searchCity("Rome");
