@@ -13,7 +13,7 @@ h1 {
 }
 
 h2 {
-  color: blue;
+  color: orange;
   font-family: "Krona One";
   font-size: 16px;
   margin-top: 0;
@@ -27,7 +27,7 @@ ul {
   list-style: none;
   font-size: 14px;
   line-height: 1.5;
-  color: blue;
+  color: orange;
 }
 
 li:first-letter {
@@ -56,6 +56,17 @@ hr {
 .btn {
   border-radius: 10px;
   background: orange;
+}
+
+.units {
+  font-family: "Krona One";
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.active {
+  color: orange;
+  font-family: "Krona One";
 }
 
 .prewin {
@@ -115,7 +126,9 @@ hr {
 #current-temp {
   color: orange;
   font-family: "Krona One";
-  font-size: 16px;
-  margin-top: 0;
+  font-size: 40px;
+  font-weight: 400;
+  margin-left: 20px;
+  margin-top: 20px;
   line-height: 1.5;
 }

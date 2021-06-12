@@ -19,8 +19,10 @@ function formatDate(date) {
   }
   return `${currentDay}, ${currentHour}:${currentMinutes}`;
 }
+
 function showTemp(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
+  celsiusTemp = response.data.main.temp;
   document.querySelector("#current-temp").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -37,6 +39,7 @@ function showTemp(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
 function searchCity(city) {
   let apiKey = "f1a24663f0cb0588bb9ad4c51ce1de8b";
   let units = "metric";
@@ -75,4 +78,30 @@ let cityForm = document.querySelector("#city-form");
 cityForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentPosition);
+
+function showCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenLink.classList.remove("active");
+  let tempElement = document.querySelector("#current-temp");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+}
+
+function showFahren(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#current-temp");
+  celsiusLink.classList.remove("active");
+  fahrenLink.classList.add("active");
+  let fahrenheit = (celsiusTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrenheit);
+}
+
+let celsiusTemp = null;
+
+let celsiusLink = document.querySelector("#celsiustemp");
+celsiusLink.addEventListener("click", showCelsius);
+
+let fahrenLink = document.querySelector("#fahrentemp");
+fahrenLink.addEventListener("click", showFahren);
+
 searchCity("Rome");
