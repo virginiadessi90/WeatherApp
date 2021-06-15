@@ -86,6 +86,10 @@ hr {
   right: 20px;
 }
 
+.min {
+  opacity: 0.5;
+}
+
 .card-app {
   margin: 5px;
   border: 2px solid blue;
